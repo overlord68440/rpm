@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../imgIcon/fastFowardingActiveButton.png</file>
+        <file>../imgIcon/fastFowardingButton.png</file>
+        <file>../imgIcon/GetBackActiveButton.png</file>
+        <file>../imgIcon/getBackButton.png</file>
+        <file>../imgIcon/highVol.png</file>
+        <file>../imgIcon/highVolActive.png</file>
+        <file>../imgIcon/imgicon.qrc</file>
+        <file>../imgIcon/lowVol.png</file>
+        <file>../imgIcon/lowVolActive.png</file>
+        <file>../imgIcon/muteActiveButton.png</file>
+        <file>../imgIcon/muteButton.png</file>
+        <file>../imgIcon/nextSongActiveButton.png</file>
+        <file>../imgIcon/nextSongButton.png</file>
+        <file>../imgIcon/pauseActiveButton.png</file>
+        <file>../imgIcon/pauseButton.png</file>
+        <file>../imgIcon/PlayActiveButton.png</file>
+        <file>../imgIcon/playButton.png</file>
+        <file>../imgIcon/previousSongActiveButton.png</file>
+        <file>../imgIcon/previousSongButton.png</file>
+        <file>../imgIcon/stopActiveButton.png</file>
+        <file>../imgIcon/stopButton.png</file>
+    </qresource>
+</RCC>
