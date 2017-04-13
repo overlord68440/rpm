@@ -7,20 +7,26 @@
     <x>0</x>
     <y>0</y>
     <width>1169</width>
-    <height>698</height>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">background-color : #535353 ;
+color : white ;
+border-width : 0px ;
+border-color : #2d2d2d ;</string>
+   </property>
    <widget class="QWidget" name="gridLayoutWidget_4">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>0</y>
       <width>1151</width>
-      <height>641</height>
+      <height>661</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayoutMain">
@@ -35,12 +41,13 @@
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>150</height>
+         <height>250</height>
         </size>
        </property>
        <property name="styleSheet">
         <string notr="true">border-style : solid  ;
-border-width : 1px; </string>
+border-width : 1px; 
+background-color : #2b2b2b ;</string>
        </property>
        <property name="title">
         <string/>
@@ -49,9 +56,9 @@ border-width : 1px; </string>
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>20</y>
+          <y>35</y>
           <width>1161</width>
-          <height>91</height>
+          <height>208</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
@@ -64,99 +71,251 @@ border-width : 1px; </string>
          <property name="spacing">
           <number>0</number>
          </property>
-         <item row="1" column="0">
+         <item row="3" column="8" rowspan="2">
+          <widget class="QPushButton" name="nextSongButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imgIcon/nextSongButton.png</normaloff>../imgIcon/nextSongButton.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="6" rowspan="2">
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imgIcon/playButton.png</normaloff>../imgIcon/playButton.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2" rowspan="2">
+          <widget class="QPushButton" name="previousS">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imgIcon/previousSongButton.png</normaloff>../imgIcon/previousSongButton.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" rowspan="4">
           <widget class="QSlider" name="verticalSlider">
+           <property name="maximumSize">
+            <size>
+             <width>15</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">left-margin : 0px ;</string>
+           </property>
+           <property name="value">
+            <number>50</number>
+           </property>
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
           </widget>
          </item>
-         <item row="1" column="4">
-          <widget class="QPushButton" name="pushButton_5">
+         <item row="3" column="4" rowspan="2">
+          <widget class="QPushButton" name="stopButton">
            <property name="text">
-            <string>PushButton</string>
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imgIcon/stopButton.png</normaloff>../imgIcon/stopButton.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
            </property>
           </widget>
          </item>
-         <item row="1" column="7">
-          <widget class="QPushButton" name="pushButton_4">
+         <item row="3" column="7" rowspan="2">
+          <widget class="QPushButton" name="fastFowardingButton">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
            <property name="text">
-            <string>PushButton</string>
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imgIcon/fastFowardingButton.png</normaloff>../imgIcon/fastFowardingButton.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
            </property>
           </widget>
          </item>
-         <item row="1" column="2">
-          <widget class="QPushButton" name="pushButton_2">
+         <item row="3" column="3" rowspan="2">
+          <widget class="QPushButton" name="backwardButton">
            <property name="text">
-            <string>PushButton</string>
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imgIcon/getBackButton.png</normaloff>../imgIcon/getBackButton.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QPushButton" name="lowVolButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imgIcon/lowVol.png</normaloff>../imgIcon/lowVol.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label">
+           <property name="styleSheet">
+            <string notr="true">border-width : 0px ;
+color: white ;
+</string>
+           </property>
+           <property name="text">
+            <string>0.0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="margin">
+            <number>5</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="highVolButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imgIcon/highVol.png</normaloff>../imgIcon/highVol.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
            </property>
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QCheckBox" name="checkBox_2">
-           <property name="text">
-            <string>CheckBox</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="6">
-          <widget class="QPushButton" name="pushButton_3">
-           <property name="text">
-            <string>PushButton</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="5">
-          <widget class="QCheckBox" name="checkBox">
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
+          <widget class="QPushButton" name="pushButton">
            <property name="text">
             <string/>
            </property>
           </widget>
          </item>
-         <item row="1" column="3">
-          <widget class="QPushButton" name="pushButton">
-           <property name="text">
-            <string>PushButton</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
-          <widget class="QLabel" name="label">
-           <property name="styleSheet">
-            <string notr="true">border-width : 0px ;
-</string>
-           </property>
-           <property name="text">
-            <string>TextLabel</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2" colspan="5">
+         <item row="0" column="2" colspan="6">
           <widget class="QSlider" name="horizontalSlider">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
-         <item row="0" column="7">
+         <item row="0" column="8">
           <widget class="QLabel" name="label_2">
            <property name="styleSheet">
             <string notr="true">border-width : 0px ;
+color : white ;
+
 </string>
            </property>
            <property name="text">
-            <string>TextLabel</string>
+            <string>end</string>
+           </property>
+           <property name="margin">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="5" rowspan="2">
+          <widget class="QPushButton" name="pauseButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imgIcon/pauseButton.png</normaloff>../imgIcon/pauseButton.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" rowspan="2">
+          <widget class="QPushButton" name="muteButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../imgIcon/muteButton.png</normaloff>../imgIcon/muteButton.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
            </property>
           </widget>
          </item>
         </layout>
        </widget>
-       <zorder>groupBox_2</zorder>
-       <zorder>gridLayoutWidget_3</zorder>
-       <zorder>tabAll</zorder>
       </widget>
      </item>
      <item row="1" column="0">
@@ -164,32 +323,47 @@ border-width : 1px; </string>
        <property name="maximumSize">
         <size>
          <width>10000</width>
-         <height>500</height>
+         <height>400</height>
         </size>
        </property>
        <property name="styleSheet">
         <string notr="true">border-style : solid  ;
-border-width : 1px; </string>
+border-width : 1px; 
+background-color : #2d2d2d ;
+color : white ;
+</string>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="tabSong">
+        <property name="styleSheet">
+         <string notr="true">background-color : #2b2b2b ;</string>
+        </property>
         <attribute name="title">
          <string>Morceaux</string>
         </attribute>
        </widget>
        <widget class="QWidget" name="tabPlaylist">
+        <property name="styleSheet">
+         <string notr="true">background-color : #2b2b2b ;</string>
+        </property>
         <attribute name="title">
          <string>Liste de lecture</string>
         </attribute>
        </widget>
        <widget class="QWidget" name="tabRadio">
+        <property name="styleSheet">
+         <string notr="true">background-color : #2b2b2b ;</string>
+        </property>
         <attribute name="title">
          <string>Radio</string>
         </attribute>
        </widget>
        <widget class="QWidget" name="tabPref">
+        <property name="styleSheet">
+         <string notr="true">background-color : #2b2b2b ;</string>
+        </property>
         <attribute name="title">
          <string>Page</string>
         </attribute>
