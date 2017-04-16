@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>../imgIcon/fastFowardingActiveButton.png</file>
         <file>../imgIcon/fastFowardingButton.png</file>
-        <file>../imgIcon/GetBackActiveButton.png</file>
         <file>../imgIcon/getBackButton.png</file>
         <file>../imgIcon/highVol.png</file>
         <file>../imgIcon/highVolActive.png</file>
@@ -21,5 +20,6 @@
         <file>../imgIcon/previousSongButton.png</file>
         <file>../imgIcon/stopActiveButton.png</file>
         <file>../imgIcon/stopButton.png</file>
+        <file>../imgIcon/getBackActiveButton.png</file>
     </qresource>
 </RCC>
