@@ -2,7 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <buttonhoverwatcher.h>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include "buttonhoverwatcher.h"
+#include "constant.h"
+#include "client.h"
 namespace Ui {
 class MainWindow;
 }
@@ -17,7 +22,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    client *c ;
 
+    void sendOrders(orders o) ;
 
 private slots :
     void stopIcon() ;
@@ -27,9 +34,14 @@ private slots :
 
     void raiseVol() ;
     void lowerVol() ;
+    void previousSong() ;
+    void nextSong() ;
+    void shuffleSong();
+    void repeatSong(bool b);
 
     void isActiveSongModeTab();
     void isActiveRadioModeTab();
+
 };
 
 #endif // MAINWINDOW_H

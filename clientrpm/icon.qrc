@@ -21,5 +21,9 @@
         <file>../imgIcon/stopActiveButton.png</file>
         <file>../imgIcon/stopButton.png</file>
         <file>../imgIcon/getBackActiveButton.png</file>
+        <file>../imgIcon/shuffleActiveButton.png</file>
+        <file>../imgIcon/shuffleButton.png</file>
+        <file>../imgIcon/repeatButton.png</file>
+        <file>../imgIcon/repeatActiveButton.png</file>
     </qresource>
 </RCC>

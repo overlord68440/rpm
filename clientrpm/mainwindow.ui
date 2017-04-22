@@ -580,6 +580,40 @@ border-radius: 2px;
            </property>
           </widget>
          </item>
+         <item row="5" column="7">
+          <widget class="QPushButton" name="repeatButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="icon.qrc">
+             <normaloff>:/imgIcon/repeatButton.png</normaloff>:/imgIcon/repeatButton.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="6">
+          <widget class="QPushButton" name="shuffleButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="icon.qrc">
+             <normaloff>:/imgIcon/shuffleButton.png</normaloff>:/imgIcon/shuffleButton.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
         </layout>
         <zorder>nextSongButton</zorder>
         <zorder>playButton</zorder>
@@ -599,6 +633,8 @@ border-radius: 2px;
         <zorder>backwardButton</zorder>
         <zorder>currentMusicLabel</zorder>
         <zorder>textMusiclabel</zorder>
+        <zorder>repeatButton</zorder>
+        <zorder>shuffleButton</zorder>
        </widget>
       </widget>
      </item>
