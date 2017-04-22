@@ -1,4 +1,4 @@
-build-clientrpm-Desktop-Debug/
+build-*
 
 # Compiled Object files
 *.slo
