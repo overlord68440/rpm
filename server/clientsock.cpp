@@ -27,7 +27,8 @@ void clientSock::readSock()
 
         while(csock->canReadLine())
             bytes = csock->readAll();
-    //writeSock("message recu") ;
+        QString myString(bytes);
+        qDebug() << myString ;
 }
 
 void clientSock::writeSock(QByteArray dataToSend)

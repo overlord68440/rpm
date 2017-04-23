@@ -28,9 +28,6 @@ void client::disconnect()
 
 void client::writeSock(QByteArray dataToSend)
 {
-  //  qDebug() << "writting...";
-   // QTextStream stream(&sockToServ);
-  //  stream << dataToSend << endl
     sockToServ.write(dataToSend.data(), dataToSend.length());
     sockToServ.flush();
 }

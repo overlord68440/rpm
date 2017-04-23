@@ -24,24 +24,41 @@ private:
     Ui::MainWindow *ui;
     client *c ;
 
+
+    ButtonHoverWatcher * watcherHighVol ;
+    ButtonHoverWatcher * watcherLowVol ;
+    ButtonHoverWatcher * watcherMute ;
+    ButtonHoverWatcher * watcherPreviousSong ;
+    ButtonHoverWatcher * watcherBackward ;
+    ButtonHoverWatcher * watcherStop ;
+    ButtonHoverWatcher * watcherFoward ;
+    ButtonHoverWatcher * watcherNextSong ;
+    ButtonHoverWatcher * watcherShuffle ;
+    ButtonHoverWatcher * watcherRepeat ;
+
     void sendOrders(orders o) ;
 
+    void initWatcher();
 private slots :
-    void stopIcon() ;
-    void togglePauseIcon(bool b);
-    void togglePlayIcon(bool b);
+    void stopIt() ;
+    void togglePause(bool b);
+    void togglePlay(bool b);
 
 
     void raiseVol() ;
     void lowerVol() ;
+    void muteSong(bool b);
     void previousSong() ;
     void nextSong() ;
-    void shuffleSong();
+    void shufflePlaylist();
     void repeatSong(bool b);
 
     void isActiveSongModeTab();
     void isActiveRadioModeTab();
 
+
+    void lowerSpeedSong();
+    void raiseSpeedSong();
 };
 
 #endif // MAINWINDOW_H

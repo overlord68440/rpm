@@ -34,7 +34,7 @@ enum orders
     raiseVolume = 21,
     lowerVolume = 22 ,
     muteOn = 23,
-    muteDown = 24,
+    muteOff = 24,
 
     shuffle = 31 ,
     repeatOn = 32,

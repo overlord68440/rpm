@@ -6,29 +6,41 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //c = new client() ;
+    c = new client() ;
 
-
-    //connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(stopIcon())) ;
+    connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(stopIt())) ;
     connect(ui->highVolButton,SIGNAL(clicked()), this, SLOT(raiseVol())) ;
     connect(ui->lowVolButton,SIGNAL(clicked()), this, SLOT(lowerVol())) ;
     connect(ui->previousSongButton,SIGNAL(clicked()), this, SLOT(previousSong())) ;
-    connect(ui->pauseButton, SIGNAL(toggled(bool)), this, SLOT(togglePauseIcon(bool))) ;
-    connect(ui->playButton, SIGNAL(toggled(bool)), this, SLOT(togglePlayIcon(bool))) ;
+    connect(ui->backwardButton,SIGNAL(clicked()), this, SLOT(lowerSpeedSong())) ;
+    connect(ui->pauseButton, SIGNAL(toggled(bool)), this, SLOT(togglePause(bool))) ;
+    connect(ui->playButton, SIGNAL(toggled(bool)), this, SLOT(togglePlay(bool))) ;
+    connect(ui->fastFowardingButton,SIGNAL(clicked()), this, SLOT(raiseSpeedSong())) ;
     connect(ui->nextSongButton,SIGNAL(clicked()), this, SLOT(nextSong())) ;
     connect(ui->shuffleButton,SIGNAL(clicked()), this, SLOT(shufflePlaylist())) ;
+    connect(ui->repeatButton,SIGNAL(toggled(bool)), this, SLOT(repeatSong(bool))) ;
 
+    initWatcher();
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::initWatcher()
+{
     //set icon when hover
-    ButtonHoverWatcher * watcherHighVol = new ButtonHoverWatcher("../imgIcon/highVol.png","../imgIcon/highVolActive.png",this);
-    ButtonHoverWatcher * watcherLowVol = new ButtonHoverWatcher("../imgIcon/lowVol.png","../imgIcon/lowVolActive.png",this);
-    ButtonHoverWatcher * watcherMute = new ButtonHoverWatcher("../imgIcon/muteButton.png","../imgIcon/muteActiveButton.png",this);
-    ButtonHoverWatcher * watcherPreviousSong = new ButtonHoverWatcher("../imgIcon/previousSongButton.png","../imgIcon/previousSongActiveButton.png",this);
-    ButtonHoverWatcher * watcherBackward = new ButtonHoverWatcher("../imgIcon/getBackButton.png","../imgIcon/getBackActiveButton.png",this);
-    ButtonHoverWatcher * watcherStop = new ButtonHoverWatcher("../imgIcon/stopButton.png","../imgIcon/stopActiveButton.png",this);
-    ButtonHoverWatcher * watcherFoward = new ButtonHoverWatcher("../imgIcon/fastFowardingButton.png","../imgIcon/fastFowardingActiveButton.png",this);
-    ButtonHoverWatcher * watcherNextSong = new ButtonHoverWatcher("../imgIcon/nextSongButton.png","../imgIcon/nextSongActiveButton.png",this);
-    ButtonHoverWatcher * watcherShuffle = new ButtonHoverWatcher("../imgIcon/shuffleButton.png","../imgIcon/shuffleActiveButton.png",this);
-    ButtonHoverWatcher * watcherRepeat = new ButtonHoverWatcher("../imgIcon/repeatButton.png","../imgIcon/repeatActiveButton.png",this);
+    watcherHighVol = new ButtonHoverWatcher("../imgIcon/highVol.png","../imgIcon/highVolActive.png",this);
+    watcherLowVol = new ButtonHoverWatcher("../imgIcon/lowVol.png","../imgIcon/lowVolActive.png",this);
+    watcherMute = new ButtonHoverWatcher("../imgIcon/muteButton.png","../imgIcon/muteActiveButton.png",this);
+    watcherPreviousSong = new ButtonHoverWatcher("../imgIcon/previousSongButton.png","../imgIcon/previousSongActiveButton.png",this);
+    watcherBackward = new ButtonHoverWatcher("../imgIcon/getBackButton.png","../imgIcon/getBackActiveButton.png",this);
+    watcherStop = new ButtonHoverWatcher("../imgIcon/stopButton.png","../imgIcon/stopActiveButton.png",this);
+    watcherFoward = new ButtonHoverWatcher("../imgIcon/fastFowardingButton.png","../imgIcon/fastFowardingActiveButton.png",this);
+    watcherNextSong = new ButtonHoverWatcher("../imgIcon/nextSongButton.png","../imgIcon/nextSongActiveButton.png",this);
+    watcherShuffle = new ButtonHoverWatcher("../imgIcon/shuffleButton.png","../imgIcon/shuffleActiveButton.png",this);
+    watcherRepeat = new ButtonHoverWatcher("../imgIcon/repeatButton.png","../imgIcon/repeatActiveButton.png",this);
 
     ui->highVolButton->installEventFilter(watcherHighVol);
     ui->lowVolButton->installEventFilter(watcherLowVol);
@@ -40,40 +52,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->nextSongButton->installEventFilter(watcherNextSong);
     ui->shuffleButton->installEventFilter(watcherShuffle);
     ui->repeatButton->installEventFilter(watcherRepeat);
-
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-
-void MainWindow::stopIcon()
-{
-    ui->pauseButton->setChecked(false);
-    ui->playButton->setChecked(false);
-    ui->pauseButton->setIcon(QIcon("../imgIcon/pauseButton.png"));
-    ui->playButton->setIcon(QIcon("../imgIcon/playButton.png"));
-    ui->pauseButton->setEnabled(false);
-    ui->playButton->setEnabled(false);
-}
-
-
-void MainWindow::togglePauseIcon(bool b)
-{
-    if(b)
-    {
-        sendOrders(pauseOrder);
-    }
-}
-
-void MainWindow::togglePlayIcon(bool b)
-{
-    if(b)
-    {
-        sendOrders(play) ;
-    }
-}
 
 void MainWindow::raiseVol()
 {
@@ -83,6 +63,45 @@ void MainWindow::raiseVol()
 void MainWindow::lowerVol()
 {
     sendOrders(lowerVolume);
+}
+
+void MainWindow::muteSong(bool b)
+{
+    if(b)
+        sendOrders(muteOn);
+    else
+        sendOrders(muteOff);
+}
+
+void MainWindow::stopIt()
+{
+    sendOrders(stop);
+}
+
+void MainWindow::togglePause(bool b)
+{
+    if(b)
+    {
+        sendOrders(pauseOrder);
+    }
+}
+
+void MainWindow::togglePlay(bool b)
+{
+    if(b)
+    {
+        sendOrders(play) ;
+    }
+}
+
+void MainWindow::lowerSpeedSong()
+{
+    sendOrders(speedDown);
+}
+
+void MainWindow::raiseSpeedSong()
+{
+    sendOrders(speedUp);
 }
 
 void MainWindow::previousSong()
@@ -95,7 +114,7 @@ void MainWindow::nextSong()
     sendOrders(next);
 }
 
-void MainWindow::shuffleSong()
+void MainWindow::shufflePlaylist()
 {
         sendOrders(shuffle);
 }
@@ -107,7 +126,6 @@ void MainWindow::repeatSong(bool b)
     else
         sendOrders(repeatOff);
 }
-
 
 void MainWindow::sendOrders(orders o)
 {
@@ -139,12 +157,12 @@ void MainWindow::sendOrders(orders o)
         case speedUp :
             toSend.append("multiply");
             toSend.append("speed");
-            toSend.append("0.5");
+            toSend.append("2");
         break ;
         case speedDown :
             toSend.append("multiply");
             toSend.append("speed");
-            toSend.append("2.0");
+            toSend.append("0.5");
         break ;
 
         case raiseVolume :
@@ -162,7 +180,7 @@ void MainWindow::sendOrders(orders o)
             toSend.append("mute");
             toSend.append("1");
         break ;
-        case muteDown :
+        case muteOff :
         toSend.append("cycle");
         toSend.append("mute");
         toSend.append("1");
@@ -194,7 +212,6 @@ void MainWindow::sendOrders(orders o)
     c->writeSock(bytes);
 }
 
-
 void MainWindow::isActiveSongModeTab()
 {
     ui->fastFowardingButton->setEnabled(true);
@@ -208,20 +225,5 @@ void MainWindow::isActiveRadioModeTab()
     ui->backwardButton->setEnabled(false);
     ui->pauseButton->setEnabled(false);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

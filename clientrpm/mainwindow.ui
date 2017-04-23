@@ -595,6 +595,9 @@ border-radius: 2px;
              <height>32</height>
             </size>
            </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item row="5" column="6">
